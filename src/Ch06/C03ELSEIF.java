@@ -20,7 +20,7 @@ public class C03ELSEIF {
 //		Scanner sc = new Scanner(System.in);
 //		int kor=sc.nextInt(), eng=sc.nextInt(), mat=sc.nextInt();
 //		double avg=(double)(kor+eng+mat)/3;
-//		
+		
 //		if(kor<40) {
 //			System.out.println("불합격");
 //		}else if(eng<40)	//kor>=40
@@ -34,6 +34,34 @@ public class C03ELSEIF {
 //			System.out.println("불합격");						
 //		}else {
 //			System.out.println("합격");
+//		}
+		
+//		if(kor>=40) 
+//		{
+//			if(eng>=40)
+//			{
+//				if(mat>=40)
+//				{
+//					if(avg>=60)
+//					{
+//						System.out.println("합격");
+//					}else {
+//						System.out.println("불합격");
+//					}
+//				}else {
+//					System.out.println("불합격");
+//				}
+//			}else {
+//				System.out.println("불합격");
+//			}
+//		}else {
+//			System.out.println("불합격");
+//		}
+		
+//		if(kor>=40 && eng>=40 && mat>=40 && avg>=60) {
+//			System.out.println("합격");
+//		}else {
+//			System.out.println("불합격");
 //		}
 		
 		/*
@@ -90,19 +118,19 @@ public class C03ELSEIF {
 		//score < 90 B
 		//그외 A
 		
-		Scanner sc = new Scanner(System.in);
-		int score = sc.nextInt();
-		if(score < 60) {
-			System.out.println("F");
-		}else if(score < 70) {
-			System.out.println("D");
-		}else if(score < 80) {
-			System.out.println("C");
-		}else if(score < 90) {
-			System.out.println("B");
-		}else {
-			System.out.println("A");
-		}
+//		Scanner sc = new Scanner(System.in);
+//		int score = sc.nextInt();
+//		if(score < 60) {
+//			System.out.println("F");
+//		}else if(score < 70) {
+//			System.out.println("D");
+//		}else if(score < 80) {
+//			System.out.println("C");
+//		}else if(score < 90) {
+//			System.out.println("B");
+//		}else {
+//			System.out.println("A");
+//		}
 		
 		
 		

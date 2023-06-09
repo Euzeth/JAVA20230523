@@ -1,11 +1,10 @@
 package Ch05;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class C02PercentArith {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		// %연산자
 		
@@ -17,7 +16,7 @@ public class C02PercentArith {
 		
 //		Scanner sc = new Scanner(System.in);
 //		int num1 = sc.nextInt();
-//		
+		
 //		String result = (num1%2==0)?"짝수입니다":"홀수입니다";
 //		System.out.println("결과 : " + result );
 		

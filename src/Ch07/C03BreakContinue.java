@@ -15,12 +15,49 @@ public class C03BreakContinue {
 //		while(true)
 //		{
 //			n=sc.nextInt();
-//			if(n==1) {
+//			if(n==-1) {
 //				break;
 //			}
 //			sum+=n;
 //		}
 //		System.out.println("SUM = " + sum);
+		
+		//flag를 이용한 전체 반복문 탈출
+		//
+		
+//		int dan=2, i=1;
+//		boolean isExit = false;
+//		while(dan<=9) {
+//			i=1;
+//			while(i<=9) {
+//				System.out.printf("%d X %d = %d\n", dan, i, dan*i);
+//				if(dan==7&&i==7) {
+//					isExit=true;
+//					break;
+//				}
+//				i++;
+//			}
+//			if(isExit==true) {
+//				break;
+//			}
+//			System.out.println();
+//			dan++;
+//		}
+		
+//		int dan=2, i=1;
+//		Exit:
+//		while(dan<=9) {
+//			i=1;
+//			while(i<=9) {
+//				System.out.printf("%d X %d = %d\n", dan, i, dan*i);
+//				if(dan==7&&i==7) {
+//					break Exit;
+//				}
+//				i++;
+//			}
+//			System.out.println();
+//			dan++;
+//		}
 		
 		//2 continue
 		// 1부터 10까지의 수중에 3의 배수를 제외한 합 출력

@@ -29,6 +29,13 @@ public class C04For {
 		//N부터 M까지 합
 		//구구단 2단
 		//구구단 N단
+//		Scanner sc = new Scanner(System.in);
+//		int i=1;
+//		int dan = sc.nextInt();
+//		for(i=1;i<=9;i++) {
+//			System.out.println(dan + " X " + i + " = " + (dan*i));
+//		}
+		
 		//구구단 전체
 		
 //		int dan=9;
@@ -99,36 +106,51 @@ public class C04For {
 //		}
 //		System.out.println("SUM : " + sum);
 		
-		int i=0;
-		int j=0;
-		int k=0;
+//		int i=0;
+//		int j=0;
+//		int k=0;
+//		
+//		for(i=0;i<7;i++) {
+//			if(i<4) {
+//				//공백
+//				for(j=0;j<=2-i;j++) {
+//					System.out.print(" ");
+//				}
+//				//별
+//				for(k=0;k<=2*i;k++) {
+//					System.out.print("*");
+//				}
+//			}else {
+//				//공백
+//				for(j=0;j<=i-4;j++) {
+//					System.out.print(" ");
+//				}
+//				//별
+//				for(k=0;k<=12-2*i;k++) {
+//					System.out.print("*");
+//				}
+//			}
+//			System.out.println();
+//		}
 		
-		for(i=0;i<7;i++) {
-			if(i<4) {
-				//공백
-				for(j=0;j<=2-i;j++) {
-					System.out.print(" ");
-				}
-				//별
-				for(k=0;k<=2*i;k++) {
-					System.out.print("*");
-				}
-			}else {
-				//공백
-				for(j=0;j<=i-4;j++) {
-					System.out.print(" ");
-				}
-				//별
-				for(k=0;k<=12-2*i;k++) {
-					System.out.print("*");
-				}
-			}
-			System.out.println();
-		}
-		
-		
-		
-		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i=0, j=0;
+//		while(i<h) {
+//			j=0;
+//			while(j<=(h-1)-i) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+//		for(i=0; i<h;i++) {
+//			for(j=0;j<=(h-1)-i;j++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
 		
 	}
 
