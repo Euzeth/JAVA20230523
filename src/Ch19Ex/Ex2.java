@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Ex2 {
 	
@@ -14,7 +15,7 @@ public class Ex2 {
 		// 1 ~ 45 까지 숫자를 6개를 랜덤으로 받아(Random클래스를 이용) set에 저장
 
 		//[추가]저장된 set의 오름차순 정렬을 해보세요(검색을 통해서 해결해봅니다)
-		 Set<Integer> numberSet = new HashSet<>();
+		 	Set<Integer> numberSet = new HashSet<>();
 	        Random random = new Random();
 	        
 	        while (numberSet.size() < 6) {
@@ -26,8 +27,21 @@ public class Ex2 {
 	        Collections.sort(sortedList);
 	        
 	        for (int number : sortedList) {
-	            System.out.println(number);
+	        	System.out.print(number + " ");
 	        }
-		
+	        System.out.println();
+	        Collections.sort(sortedList, Collections.reverseOrder());
+	        for (int number : sortedList) {
+	        	System.out.print(number + " ");
+	        }
+	        System.out.println();
+	        //Stream함수
+	        List<Integer> list2 = numberSet.stream().sorted().collect(Collectors.toList());
+	        for (int number : sortedList) {
+	        	System.out.print(number + " ");
+	        }
+	        
+	        
+	        
 	}
 }
