@@ -19,7 +19,17 @@ public class BookDao {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public BookDao(){
+	//싱글톤 패턴
+	private static BookDao instance;
+	public static BookDao getInstance() {
+		if(instance == null)
+			instance = new BookDao();
+		return instance;
+	}
+	//
+	
+	
+	private BookDao(){
 		id = "root";
 		pw = "1234";
 		url = "jdbc:mysql://localhost:3306/bookdb";
@@ -71,7 +81,7 @@ public class BookDao {
 		pstmt = conn.prepareStatement("select * from tbl_book where bookcode=?");
 		pstmt.setInt(1, bookcode);
 		rs = pstmt.executeQuery();
-		if(rs!=null) 
+		if(rs!=null && rs.isBeforeFirst()) 
 		{
 				rs.next();
 				dto = new BookDto();

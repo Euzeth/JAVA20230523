@@ -3,11 +3,16 @@ package Ch29.tests.ControllerTests;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
 
+import Ch29.Controller.BookController;
 import Ch29.Controller.FrontController;
+import Ch29.Controller.MemberController;
+import Ch29.Domain.common.Dto.BookDto;
+import Ch29.Domain.common.Dto.MemberDto;
 
 public class ControllerTests {
 
@@ -53,7 +58,44 @@ public class ControllerTests {
 		
 	}
 	
+	@Test
+	public void test3_BookController() throws Exception{
+		
+		BookController controller = new BookController();
+		
+		//조회
+		Map<String,Object> result = controller.execute(1, null);
+		List<BookDto> list = (List<BookDto>)result.get("result");
+		
+		list.stream().forEach((dto)->{System.out.println(dto);});
+		
+		//삽입
+		
+		
+	}
 	
+	@Test
+	public void test4_MemberController() throws Exception{
+		
+		MemberController controller = new MemberController();
+		
+		//로그인
+		Map<String,Object> param = new HashMap();
+		param.put("id", "member9");
+		param.put("pw", "1234");
+		
+		Map<String,Object> result = controller.execute(5, param);
+		String sid = (String)result.get("result");
+		System.out.println("로그인 성공! Sid : " + sid);
+
+		//전체멤버조회
+		param.put("sid", sid);
+		Map<String,Object> result2 = controller.execute(1, param);
+		List<MemberDto> list = (List<MemberDto>) result2.get("result");
+		list.stream().forEach((dto)->{System.out.println(dto);});
+		
+		
+	}
 	
 	
 	

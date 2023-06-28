@@ -20,7 +20,14 @@ public class MemberDao {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	public MemberDao(){
+	private static MemberDao instance;
+	public static MemberDao getInstance() {
+		if(instance == null)
+			instance = new MemberDao();
+		return instance;
+	}
+	
+	private MemberDao(){
 		id = "root";
 		pw = "1234";
 		url = "jdbc:mysql://localhost:3306/bookdb";
@@ -74,7 +81,8 @@ public class MemberDao {
 		pstmt = conn.prepareStatement("select * from tbl_member where id=?");
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
-		if(rs!=null) {
+		if(rs!=null && rs.isBeforeFirst())
+		{
 			rs.next();
 			dto = new MemberDto();
 			dto.setId(rs.getString("id"));

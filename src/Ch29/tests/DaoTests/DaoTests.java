@@ -18,14 +18,14 @@ public class DaoTests {
 
 	@Test
 	public void BookDaoTest1() {
-		BookDao dao = new BookDao();
+		BookDao dao = BookDao.getInstance();
 		//객체연결 여부 확인 test함수
 		assertNotNull(dao);
 	}
 	
 	@Test
 	public void BookDaoTest2_insert() throws Exception {
-		BookDao dao = new BookDao();
+		BookDao dao = BookDao.getInstance();
 		assertNotNull(dao);
 		int result = dao.insert(new BookDto(1, "JAVA의정석", "A출판사", "1111"));
 		assertEquals(1,result); //기대값, 실제값
@@ -33,7 +33,7 @@ public class DaoTests {
 	
 	@Test
 	public void BookDaoTest3_insert_post100() throws Exception {
-		BookDao dao = new BookDao();
+		BookDao dao = BookDao.getInstance();
 		assertNotNull(dao);
 		int result=0;
 		for(int i=1;i<100;i++) {
@@ -43,7 +43,7 @@ public class DaoTests {
 	}
 	@Test
 	public void BookDaoTest4_select() throws Exception {
-		BookDao dao = new BookDao();
+		BookDao dao = BookDao.getInstance();
 		assertNotNull(dao);
 		
 		List<BookDto> list = dao.select();
@@ -56,7 +56,7 @@ public class DaoTests {
 	}
 	@Test
 	public void BookDaoTest5_select_bookcode() throws Exception {
-		BookDao dao = new BookDao();
+		BookDao dao = BookDao.getInstance();
 		assertNotNull(dao);
 		
 		BookDto dto = dao.select(10);
@@ -69,7 +69,7 @@ public class DaoTests {
 	
 	@Test
 	public void MemberDaoTest1_insert() throws Exception{
-		MemberDao dao = new MemberDao();
+		MemberDao dao = MemberDao.getInstance();
 		assertNotNull(dao);
 		int result = dao.insert(new MemberDto("user1", "1111", "홍길동", "ROLE_USER"));
 		assertEquals(1,result); //기대값, 실제값
@@ -79,7 +79,7 @@ public class DaoTests {
 	
 	@Test
 	public void MemberDaoTest2_update() throws Exception{
-		MemberDao dao = new MemberDao();
+		MemberDao dao = MemberDao.getInstance();
 		assertNotNull(dao);
 		int result = dao.update(new MemberDto("user1", "1234","HongGilDong","ROLE_MEMBER"));
 		assertEquals(1,result); //기대값, 실제값
@@ -88,7 +88,7 @@ public class DaoTests {
 	
 	@Test
 	public void MemberDaoTest3_delete() throws Exception{
-		MemberDao dao = new MemberDao();
+		MemberDao dao = MemberDao.getInstance();
 		assertNotNull(dao);
 		int result = dao.delete("user1");
 		assertEquals(1,result); //기대값, 실제값
@@ -97,7 +97,7 @@ public class DaoTests {
 	
 	@Test
 	public void MemberDaoTest4_postMember() throws Exception{
-		MemberDao dao = new MemberDao();
+		MemberDao dao = MemberDao.getInstance();
 		assertNotNull(dao);
 		int result=0;
 		for(int i=1;i<=5;i++) {
@@ -112,7 +112,7 @@ public class DaoTests {
 	
 	@Test
 	public void MemberDaoTest5_select() throws Exception{
-		MemberDao dao = new MemberDao();
+		MemberDao dao = MemberDao.getInstance();
 		assertNotNull(dao);
 		List<MemberDto> list = dao.select();
 		
@@ -124,7 +124,7 @@ public class DaoTests {
 	
 	@Test
 	public void LendDaoTest1_insert() throws Exception {
-		LendDao dao = new LendDao();
+		LendDao dao = LendDao.getInstance();
 		assertNotNull(dao);	//Unit Test Function
 		
 		int result = dao.insert(new LendDto(0, 1, "user1",null,null));
