@@ -128,16 +128,14 @@ public Map<String,Object> execute(int serviceNo, Map<String, Object> param) {
 			}
 			//3 서비스 실행
 //			MemberDto dto = new MemberDto(id,pw,null,null);
-			String sid = null;
+			Map<String,Object> result = new HashMap();
 			try {
-				sid = service.login(id, pw);
+				result = service.login(id, pw);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
 			//4 View로 전달
-			Map<String,Object> result = new HashMap();
-			result.put("result", sid);
 			return result;
 		}else if(serviceNo==6) {
 			//1 파라미터 추출

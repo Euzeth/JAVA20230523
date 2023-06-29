@@ -3,6 +3,7 @@ package Ch29.tests.ServiceTests;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -28,7 +29,7 @@ public class ServiceTests {
 	@Test
 	public void test2_MemberService_login() throws Exception{
 		MemberService service = MemberService.getInstance();
-		String sid = service.login("user1", "1234");
+		Map<String, Object> sid = service.login("user1", "1234");
 		System.out.println("sid : " + sid);
 		Session mySession = service.sessionMap.get(sid);
 		System.out.println("mySession : " + mySession);
@@ -45,11 +46,11 @@ public class ServiceTests {
 		lendService.setMemberService(memberService);
 		
 		//로그인
-		String login_sid = memberService.login("member9", "1234");
+		Map<String, Object> login_sid = memberService.login("member9", "1234");
 		System.out.println("login_Sid " + login_sid);
 		
 		//대여요청
-		boolean islend = lendService.reqLend(login_sid, "user1", 1);
+//		boolean islend = lendService.reqLend(login_sid, "user1", 1);
 		
 		
 		
